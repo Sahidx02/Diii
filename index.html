@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Dii 🎂</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Typing animation */
+    .typing {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px #000;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid #fff;
+      width: 0;
+      margin: 20px auto;
+      animation: typing 5s steps(30, end) forwards, blink 0.7s infinite;
+    }
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    /* Slideshow */
+    .slideshow {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall { to { transform: translateY(100vh) rotate(360deg); } }
+
+    /* Balloons */
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      width: 50px;
+      height: 70px;
+      border-radius: 50%;
+      cursor: pointer;
+      animation: rise 10s linear infinite;
+    }
+    @keyframes rise { to { transform: translateY(-120vh); } }
+
+    /* Birthday Message */
+    .message {
+      font-size: 2em;
+      text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 5s ease-in-out forwards, glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0; }
+      to { text-shadow: 0 0 20px #fff, 0 0 30px #ff0, 0 0 40px #ff0; }
+    }
+
+    /* Wishes lines */
+    .wishes {
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+    .wish-line {
+      opacity: 0;
+      animation: fadeInText 2s forwards;
+      animation-fill-mode: forwards; /* ensure line stays visible after animation */
+    }
+    @keyframes fadeInText { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Final paragraph */
+.final-message {
+  margin-top: 40px;
+  font-size: 1.3em;
+  color: purple;   /* <-- changed to purple */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInText 3s forwards;
+  animation-delay: 10s;
+}
+
+    /* Fireworks */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Responsive text for mobile */
+    @media (max-width: 600px) {
+      .typing { font-size: 2em; }
+      .message { font-size: 1.5em; }
+      .wishes { font-size: 1.2em; }
+      .final-message { font-size: 1em; max-width: 90%; }
+      .slides { max-width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="typing">🎉 Happy Birthday Dii 🎉</div>
+
+  <div class="slideshow">
+    <img class="slides" src="WhatsApp-Image-2026-02-19-at-11.21.09-PM.jpg" alt="Memory 1">
+    <img class="slides" src="WhatsApp-Image-2026-02-19-at-11.22.04-PM.jpg" alt="Memory 2">
+    <img class="slides" src="WhatsApp-Image-2026-02-19-at-11.22.04-PM-_1_.jpg" alt="Memory 3">
+    <img class="slides" src="WhatsApp-Image-2026-02-19-at-11.23.41-PM.jpg" alt="Memory 4">
+    <img class="slides" src="WhatsApp-Image-2026-02-19-at-11.23.41-PM-_1_.jpg" alt="Memory 5">
+    <img class="slides" src="WhatsApp Image 2026-02-20 at 12.17.17 PM.jpg" alt="Memory 6">
+    <img class="slides" src="WhatsApp Image 2026-02-20 at 12.17.18 PM.jpg" alt="Memory 7">
+  </div>
+
+  <!-- Music autoplay -->
+  <audio id="music" autoplay loop>
+    <source src="Christina Perri - A Thousand Years [Official Music Video].mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="message">💖 I love you, Dii! 💖</div>
+
+<!-- Wishes lines with colors -->
+<div class="wishes">
+  <div class="wish-line" style="animation-delay: 2s; color: #ff69b4;">
+    🌸 May your day be filled with joy and laughter.
+  </div>
+  <div class="wish-line" style="animation-delay: 4s; color: #ff69b4;">
+    🌟 May all your dreams come true this year.
+  </div>
+  <div class="wish-line" style="animation-delay: 6s; color: #ff69b4;">
+    💐 You deserve all the happiness in the world.
+  </div>
+  <div class="wish-line" style="animation-delay: 8s; color: #ff69b4;">
+    🎂 Cheers to more memories, love, and success!
+  </div>
+</div>
+
+  <div class="final-message">
+    🌹 Dii, you are truly one of the most amazing people — your kindness, strength, and endless love inspire everyone around you. You light up every room with your smile, and your caring heart makes life so much brighter. On your special day, we celebrate not just your birthday, but the wonderful person you are and the countless ways you make the world better.Cheers to another trip around the sun!" or "May your year be filled with new adventures," or get personal with "Happy Level Up Day!" or "To my favorite partner in crime, happy birthday! 💖
+  </div>
+
+  <canvas id="fireworks"></canvas>
+
+  <script>
+    // Slideshow
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+
+    // Confetti
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.backgroundColor = ["red","blue","yellow","green","purple","pink"][Math.floor(Math.random()*6)];
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 5000);
+    }
+    setInterval(createConfetti, 200);
+
+    // Balloons
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.backgroundColor = ["red","blue","yellow","green","purple","pink"][Math.floor(Math.random()*6)];
+      balloon.style.animationDuration = (Math.random() * 5 + 8) + "s";
+      balloon.addEventListener("click", () => {
+        balloon.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+        balloon.style.transform = "scale(1.5)";
+        balloon.style.opacity = "0";
+        setTimeout(() => balloon.remove(), 300);
+      });
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }
+    setInterval(createBalloon, 1500);
+
+    // Music autoplay
+    window.addEventListener("load", () => {
+      const music = document.getElementById("music");
+      music.play().catch(() => {
+        document.body.addEventListener("click", () => music.play(), { once: true });
+      });
+    });
+
+    // Fireworks
+    const canvas = document.getElementById("fireworks");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function random(min, max) { return Math.random() * (max - min) + min; }
+
+    class Particle {
+      constructor(x, y, color) {
+        this.x = x; this.y = y; this.color = color;
+        this.vx = random(-3, 3); this.vy = random(-3, 3);
+        this.alpha = 1; this.done = false;
+      }
+      update() { this.x += this.vx; this.y += this.vy; this.vy += 0.05; this.alpha -= 0.02; if (this.alpha <= 0) this.done = true; }
+      draw() { ctx.globalAlpha = this.alpha; ctx.beginPath(); ctx.arc(this.x, this.y, 2, 0, Math.PI*2); ctx.fillStyle = this.color; ctx.fill(); ctx.globalAlpha = 1; }
+    }
+
+    class Firework {
+      constructor() {
+        this.x = random(0, canvas.width);
+        this.y = canvas.height;
+        this.targetY = random(canvas.height/4, canvas.height/2);
+        this.color = `hsl(${Math.floor(random(0,360))},100%,50%)`;
+        this.particles = []; this.exploded = false;
+      }
+      update() {
+        if (!this.exploded) { this.y -= 5; if (this.y <= this.targetY) { this.explode(); this.exploded = true; } }
+        else { this.particles.forEach(p => p.update()); this.particles = this.particles.filter(p => !p.done); }
+      }
+      explode() { for (let i=0;i<30;i++) this.particles.push(new Particle(this.x,this.y,this.color)); }
+      draw() { if (!this.exploded) { ctx.beginPath(); ctx.arc(this.x,this.y,3,0,Math.PI*2); ctx.fillStyle=this.color; ctx.fill(); } else { this.particles.forEach(p=>p.draw()); } }
+    }
+
+    const fireworks = [];
+    function animateFireworks() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      if (Math.random()<0.05) fireworks.push(new Firework());
+      fireworks.forEach(fw => { fw.update(); fw.draw(); });
+      requestAnimationFrame(animateFireworks);
+    }
+    animateFireworks();
+
+    window.addEventListener("resize", () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+  </script>
+</body>
+</html>
